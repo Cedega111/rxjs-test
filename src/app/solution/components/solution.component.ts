@@ -35,7 +35,7 @@ export class SolutionComponent implements OnInit {
   setForm() {
     this.filterForm = this.formBuilder.group({
       email: [this.emailUrl || ''],
-      status: [this.statusUrl == 'active' ? true : false],
+      status: [this.statusUrl || ''],
     });
   }
 

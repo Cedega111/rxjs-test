@@ -45,6 +45,9 @@ export class SolutionComponent implements OnInit {
       debounceTime(400),
       switchMap(value => {
         return this.gorestService.getUserList(value.status ? 'active' : 'inactive', value.email)
+       //return this.gorestService.getUserList(value.status ? (value.status ? 'active' : 'inactive') : '', value.email)
+       // *Возможно, стоит написать так, чтобы можно было искать только по email и НЕ отправлять inactive при этом, но в любом случае, если бы нажмем хотя бы раз на свитч,
+       // то уже не совсем понятно как отправить в таком случае просто ''*
       }),
     )
     this.users$ = concat(start$, search$);

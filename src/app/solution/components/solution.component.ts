@@ -26,8 +26,8 @@ export class SolutionComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.emailUrl = this.route.snapshot.queryParams["email"];
-    this.statusUrl = this.route.snapshot.queryParams["status"];
+    this.emailUrl = this.route.snapshot.queryParams["email"] || '';
+    this.statusUrl = this.route.snapshot.queryParams["status"] || '';
     this.setForm();
     this.getUsersList()
   }
